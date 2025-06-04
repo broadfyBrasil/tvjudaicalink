@@ -24,7 +24,7 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
-  <video id="video" autoplay controls !muted></video>
+  <video id="video" autoplay controls muted></video>
   <script>
     const video = document.getElementById('video');
     const stream = 'https://br5093.streamingdevideo.com.br/tvjudaica/tvjudaica/playlist.m3u8';
@@ -49,21 +49,7 @@
 
     iniciarStream();
 
-    // Controles via teclado
-    document.addEventListener('keydown', function(event) {
-      switch (event.keyCode) {
-        case 13: // ENTER = mute/unmute
-          video.muted = !video.muted;
-          break;
-        case 32: // SPACE = pause/play
-          if (video.paused) {
-            video.play();
-          } else {
-            video.pause();
-          }
-          break;
-        default:
-          break;
+      document.getElementById('video').muted = false;
       }
     });
 
