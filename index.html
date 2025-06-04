@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
-  <video id="video" autoplay controls muted></video>
+  <video id="video" autoplay muted controls playsinline></video>
   <script>
     const video = document.getElementById('video');
     const stream = 'https://br5093.streamingdevideo.com.br/tvjudaica/tvjudaica/playlist.m3u8';
@@ -48,9 +49,8 @@
     }
 
     iniciarStream();
-// Controles via tecladoAdd commentMore actions
- 
-  // Controles via tecladoAdd commentMore actions
+
+    // Controles via teclado
     document.addEventListener('keydown', function(event) {
       switch (event.keyCode) {
         case 13: // ENTER = mute/unmute
@@ -64,11 +64,8 @@
           }
           break;
         default:
-          break;Add commentMore actions
-      document.getElementById('video').muted = false;
+          break;
       }
-     
-     
     });
 
     window.onload = () => {
@@ -77,3 +74,4 @@
   </script>
 </body>
 </html>
+
